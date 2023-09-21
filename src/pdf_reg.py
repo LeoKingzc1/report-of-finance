@@ -6,17 +6,18 @@ import numpy as np
 import pandas as pd
 from paddleocr import PPStructure, draw_structure_result, save_structure_res
 
-#需要创立四个文件夹pdf2imagepath，no_seal_image_path，save_folder
-#pdf2imagepath = '/content/image/'
-#no_seal_image_path = '/content/no_seal'
-#save_folder = '/content/save'
-#no_seal = '/content/no_seal'
+#需要创立两个文件夹pdf2imagepath，no_seal_image_path
+pdf2imagepath = '/content/image/'
+no_seal_image_path = '/content/no_seal/'
+
+table_engine = PPStructure(show_log=False)
+
 def pdf_reg_test(pdf_path, pages):
-  pdf2imagepath = '/content/image/'
+  pdf2imagepath = pdf2imagepath
   # pages = [int(pages)]
   pages = pages
   path_prefix = 'pic'
-  no_seal_image_path = '/content/no_seal/'
+  no_seal_image_path = no_seal_image_path
   pdf_image(pdf_path, pdf2imagepath, pages, path_prefix)
   # print("-----------将pdf指定页码转换为图片 End---------")
   # 读取pdf转换的图片，去除印章后放在某个目录下
@@ -39,7 +40,7 @@ def pdf_reg_test(pdf_path, pages):
       file_path = os.path.join(no_seal_image_path, path_prefix + str(pg) + ".png")
       image2 = file_path
       if os.path.isfile(file_path):
-          save_folder = '/content/save'
+          # save_folder = '/content/save'
           img = cv2.imread(file_path)
           result = table_engine(img)
           res1 = result[0]
@@ -87,7 +88,7 @@ def seal_remove(imagepath):
     # print(mask)
     image[mask, :] = 255
 
-    cv2.imwrite("/content/no_seal/" + filename, images)
+    cv2.imwrite(no_seal_image_path + filename, images)
 
     cv2.waitKey()
 
