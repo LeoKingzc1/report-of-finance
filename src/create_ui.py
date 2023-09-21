@@ -1,7 +1,7 @@
 import gradio as gr
 from src.ui_fun import *
 
-def creat_ui():
+def create_ui():
     with gr.Blocks() as demo:
         gr.Markdown(
         """
