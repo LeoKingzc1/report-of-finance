@@ -44,7 +44,7 @@ def mock_ocr(pdf, p_s_profit, p_e_profit,p_s_balance, p_e_balance, p_s_flow, p_e
 
 
 
-    with open('html_templates/profit_template.html') as f1:
+    with open('./html_templates/profit_template.html') as f1:
       profit_content = f1.read()
     profit_content = profit_content.replace('<!-- 在这里插入表格 -->', profit_output)
 
