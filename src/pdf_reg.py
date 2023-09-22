@@ -7,8 +7,8 @@ import pandas as pd
 from paddleocr import PPStructure, draw_structure_result, save_structure_res
 
 #需要创立两个文件夹pdf2imagepath，no_seal_image_path
-pdf2imagepath = '/content/image/'
-no_seal_image_path = '/content/no_seal/'
+pdf2imagepath = './image/'
+no_seal_image_path = './no_seal/'
 
 table_engine = PPStructure(show_log=False)
 
