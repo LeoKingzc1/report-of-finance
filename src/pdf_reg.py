@@ -13,11 +13,11 @@ no_seal_image_path = './no_seal/'
 table_engine = PPStructure(show_log=False)
 
 def pdf_reg_test(pdf_path, pages):
-  pdf2imagepath = pdf2imagepath
+  # pdf2imagepath = pdf2imagepath
   # pages = [int(pages)]
   pages = pages
   path_prefix = 'pic'
-  no_seal_image_path = no_seal_image_path
+  # no_seal_image_path = no_seal_image_path
   pdf_image(pdf_path, pdf2imagepath, pages, path_prefix)
   # print("-----------将pdf指定页码转换为图片 End---------")
   # 读取pdf转换的图片，去除印章后放在某个目录下
