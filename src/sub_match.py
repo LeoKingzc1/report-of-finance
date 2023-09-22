@@ -130,7 +130,7 @@ def table(df,subject):
 
 def fin_table_re(option, data):
   tem_name = option+'_data_tok.txt'
-  with open('/content/fin_templates/'+tem_name,'r') as f:
+  with open('./fin_templates/'+tem_name,'r') as f:
     fin_tem = f.readlines()
 
   subject = [line.strip() for line in fin_tem]
