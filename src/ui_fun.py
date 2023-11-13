@@ -85,4 +85,4 @@ def export_csv(d1,d2,d3,numbers):
         df1.style.apply(highlight_row, axis = 1).to_excel(writer, columns=col1 ,sheet_name='利润表', engine='openpyxl', index = False)
         df2.style.apply(highlight_row, axis = 1).to_excel(writer, columns=col2, sheet_name='资产负债表', engine='openpyxl', index = False)
         df3.style.apply(highlight_row, axis = 1).to_excel(writer, columns=col3, sheet_name='现金流量表', engine='openpyxl', index = False)
-    return gr.File.update(value="output.xlsx", visible=True)
+    return gr.update(value="output.xlsx", visible=True)
